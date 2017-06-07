@@ -1,0 +1,33 @@
+{
+  "rules": {
+    "no-debugger": true,
+    "quotemark": [
+      true,
+      "double"
+    ],
+    "variable-name": [
+      true,
+      "check-format"
+    ],
+    "ordered-imports": [
+      true,
+      {
+        "import-sources-order": "lowercase-last",
+        "named-imports-order": "lowercase-first"
+      }
+    ],
+    "semicolon": [
+      true,
+      "always"
+    ],
+    "space-before-function-paren": [
+      true,
+      "always"
+    ],
+    "no-consecutive-blank-lines": [
+      true,
+      2
+    ],
+    "align": [true, "parameters", "statements"]
+  }
+}
