@@ -9,6 +9,14 @@
     "node": ">= 6.0.0",
     "npm": ">= 3.0.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rowellx68/aurelia-ts-webpack-skeleton.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rowellx68/aurelia-ts-webpack-skeleton/issues"
+  },
+  "homepage": "https://github.com/rowellx68/aurelia-ts-webpack-skeleton#readme",
   "scripts": {
     "start": "webpack-dev-server -d --devtool \"#source-map\" --inline --env.server",
     "build": "rimraf ./dist && webpack --progress -p --env.production --env.extractCss"

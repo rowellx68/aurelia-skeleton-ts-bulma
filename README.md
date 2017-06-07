@@ -11,7 +11,21 @@ npm install # or yarn install
 
 This will install the dependencies, including a local version of Webpack and TypeScript. So no need to have them installed globally.
 
+To run the application, execute the following command:
+
+```shell
+npm start # or yarn start
+```
+
 The command will start the webpack development server that watches for file changes. The site should then be accessible at [http://localhost:8080](http://localhost:8080/).
+
+
+## Building
+To build an optimised and minified production bundle, execute the following command:
+
+```shell
+npm run build # or yarn build
+```
 
 ## Documentation
 
