@@ -22,7 +22,7 @@
     ],
     "space-before-function-paren": [
       true,
-      "always"
+      "never"
     ],
     "no-consecutive-blank-lines": [
       true,

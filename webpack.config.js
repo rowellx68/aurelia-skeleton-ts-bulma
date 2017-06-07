@@ -6,6 +6,11 @@ const { AureliaPlugin, ModuleDependenciesPlugin } = require("aurelia-webpack-plu
 const { optimize: { CommonsChunkPlugin }, DefinePlugin, ProvidePlugin, ContextReplacementPlugin } = require("webpack");
 const { TsConfigPathsPlugin, CheckerPlugin } = require("awesome-typescript-loader");
 
+// config helpers
+const ensureArray = (config) => config && (Array.isArray(config) ? config : [config]) || [];
+const when = (condition, config, negativeConfig) =>
+  condition ? ensureArray(config) : ensureArray(negativeConfig);
+
 // env config
 const appConfig = require("./app.config");
 
@@ -17,26 +22,26 @@ const nodeModulesDir = path.resolve(__dirname, "node_modules");
 const baseUrl = "/";
 
 const cssRules = [
-    { loader: "css-loader" }
+  { loader: "css-loader" }
 ];
 const sassRules = [
-    { loader: "css-loader" },
-    { loader: "sass-loader" }
+  { loader: "css-loader" },
+  { loader: "sass-loader" }
 ];
 
 module.exports = ({ production, server, extractCss } = {}) => ({
-    resolve: {
-        extensions: [".ts", ".js"],
-        modules: [srcDir, "node_modules"],
-        alias: {
-            "components": path.resolve("src/components")
-        }
-    },
-    entry: {
-        app: ["aurelia-bootstrapper"],
-        vendor: ["bluebird"]
-    },
-    output: {
+  resolve: {
+    extensions: [".ts", ".js"],
+    modules: [srcDir, "node_modules"],
+    alias: {
+      "components": path.resolve("src/components")
+    }
+  },
+  entry: {
+    app: ["aurelia-bootstrapper"],
+    vendor: ["bluebird"]
+  },
+  output: {
     path: outDir,
     publicPath: baseUrl,
     filename: production ? "[name].[chunkhash].bundle.js" : "[name].[hash].bundle.js",
@@ -48,51 +53,55 @@ module.exports = ({ production, server, extractCss } = {}) => ({
     historyApiFallback: true,
   },
   module: {
-      rules: [
-          {
-              test: /\.css$/i,
-              issuer: [{ not: [{ test: /\.html$/i }] }],
-              use: extractCss 
-                ? ExtractTextPlugin.extract({ fallback: "style-loader", use: cssRules }) 
-                : ["style-loader", ...cssRules] 
-          },
-          {
-              test: /\.scss$/i,
-              issuer: [{ not: [{ test: /\.html$/i }] }],
-              use: extractCss 
-                ? ExtractTextPlugin.extract({ fallback: "style-loader", use: cssRules }) 
-                : ["style-loader", ...sassRules] 
-          },
-          {
-              test: /\.css$/i,
-              issuer: [{ test: /\.html$/i }],
-              use: cssRules
-          },
-          { test: /\.html$/i, loader: "html-loader" },
-          { test: /\.ts$/i, loader: "awesome-typescript-loader", exclude: nodeModulesDir },
-          { test: /[\/\\]node_modules[\/\\]bluebird[\/\\].+\.js$/, loader: "expose-loader?Promise" },
-          { test: /\.(jpe?g|png|gif|svg)$/i, loaders: ["file-loader?hash=sha512&digest=hex&name=[hash].[ext]", "image-webpack-loader"] },
-          { test: /\.woff2(\?v=[0-9]\.[0-9]\.[0-9])?$/i, loader: "url-loader", options: { limit: 10000, mimetype: "application/font-woff2" } },
-          { test: /\.woff(\?v=[0-9]\.[0-9]\.[0-9])?$/i, loader: "url-loader", options: { limit: 10000, mimetype: "application/font-woff" } },
-          { test: /\.(ttf|eot|svg|otf)(\?v=[0-9]\.[0-9]\.[0-9])?$/i, loader: "url-loader", options: { limit: 10000 } }
-      ]
+    rules: [
+      {
+        test: /\.css$/i,
+        issuer: [{ not: [{ test: /\.html$/i }] }],
+        use: extractCss
+          ? ExtractTextPlugin.extract({ fallback: "style-loader", use: cssRules })
+          : ["style-loader", ...cssRules]
+      },
+      {
+        test: /\.scss$/i,
+        issuer: [{ not: [{ test: /\.html$/i }] }],
+        use: extractCss
+          ? ExtractTextPlugin.extract({ fallback: "style-loader", use: sassRules })
+          : ["style-loader", ...sassRules]
+      },
+      {
+        test: /\.css$/i,
+        issuer: [{ test: /\.html$/i }],
+        use: cssRules
+      },
+      { test: /\.html$/i, loader: "html-loader" },
+      { test: /\.ts$/i, loader: "awesome-typescript-loader", exclude: nodeModulesDir },
+      { test: /[\/\\]node_modules[\/\\]bluebird[\/\\].+\.js$/, loader: "expose-loader?Promise" },
+      { test: /\.(jpe?g|png|gif|svg)$/i, loaders: ["file-loader?hash=sha512&digest=hex&name=[hash].[ext]", "image-webpack-loader"] },
+      { test: /\.woff2(\?v=[0-9]\.[0-9]\.[0-9])?$/i, loader: "url-loader", options: { limit: 10000, mimetype: "application/font-woff2" } },
+      { test: /\.woff(\?v=[0-9]\.[0-9]\.[0-9])?$/i, loader: "url-loader", options: { limit: 10000, mimetype: "application/font-woff" } },
+      { test: /\.(ttf|eot|svg|otf)(\?v=[0-9]\.[0-9]\.[0-9])?$/i, loader: "url-loader", options: { limit: 10000 } }
+    ]
   },
   plugins: [
-        new AureliaPlugin(),
-        new ProvidePlugin({
-            "Promise": "bluebird"
-        }),
-        new TsConfigPathsPlugin(),
-        new CheckerPlugin(),
-        new HtmlWebpackPlugin({
-            template: "index.ejs",
-            minify: production ? {
-                removeComments: true,
-                collapseWhitespace: true
-            } : undefined,
-            metadata: {
-                title, server, baseUrl
-            }
-        })
-    ]
+    new AureliaPlugin(),
+    new ProvidePlugin({
+      "Promise": "bluebird"
+    }),
+    new DefinePlugin({
+      ENV: production ? JSON.stringify(appConfig.prduction) : JSON.stringify(appConfig.development)
+    }),
+    new TsConfigPathsPlugin(),
+    new CheckerPlugin(),
+    new HtmlWebpackPlugin({
+      template: "index.ejs",
+      minify: production ? {
+        removeComments: true,
+        collapseWhitespace: true
+      } : undefined,
+      metadata: {
+        title, server, baseUrl
+      }
+    }),
+    ...when(extractCss, new ExtractTextPlugin({ filename: "[contenthash].css", allChunks: true }))
+  ]
 });
