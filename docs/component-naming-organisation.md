@@ -1,18 +1,18 @@
 # Component Naming and Organisation
 
-Aurelia uses convention when it loads custom `element`, `attribute`, `valueConverter` classes. Classes must be named a certain way or an annotation on the class will be required.
+Aurelia uses convention when it loads custom `element`, `attribute`, `valueConverter` classes. Classes must be named a certain way or using a [decorator](https://www.typescriptlang.org/docs/handbook/decorators.html) on the class will be required.
 
 ### Custom Element
 Create your own custom elements with Aurelia. Idealy, you would name the files as how you would use the element in your html; e.g. `main-nav.html` and `main-nav.ts`.
 
-Class naming using convention:
+Basic:
 ```typescript
 export class MainNavCustomElement {
 
 }
 ```
 
-Using annotation:
+Decorator:
 ```typescript
 import { customElement } from "aurelia-framework";
 
@@ -22,8 +22,7 @@ export class ThisCouldBeAnything {
 }
 ```
 
-Both could then be used as follows:
-
+Usage:
 ```html
 <template>
   <main-nav router.bind="router"></main-nav>
@@ -32,25 +31,24 @@ Both could then be used as follows:
 
 ### Custom Attribute
 
-Class naming using convention:
+Basic:
 ```typescript
 export class TooltipCustomAttribute {
 
 }
 ```
 
-Using annotation:
+Decorator:
 ```typescript
 import { customAttribute } from "aurelia-framework";
 
-@customAttribute("tool-tip")
+@customAttribute("tooltip")
 export class CouldBeAnything {
   
 }
 ```
 
-Both could then be used as follows:
-
+Usage:
 ```html
 <button class="btn btn-danger" tooltip title="Do not press!">DANGER</button>
 ```

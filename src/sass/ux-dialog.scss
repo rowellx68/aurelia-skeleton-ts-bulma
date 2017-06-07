@@ -1,0 +1,111 @@
+ux-dialog-container,
+ux-dialog-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+ux-dialog-overlay {
+  opacity: 0;
+  background-color: #000;
+  &.active {
+    opacity: 0.7;
+  }
+}
+
+ux-dialog-container {
+  outline: 0;
+  display: block;
+  transition: opacity .2s linear;
+  opacity: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  &.active {
+    opacity: 1;
+  }
+  >div {
+    outline: 0;
+    padding: 30px;
+    width: 100%;
+    >div {
+      outline: 0;
+      display: block;
+      min-width: 300px;
+      max-width: 1380px;
+      height: fit-content;
+      margin: auto;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+  }
+}
+
+ux-dialog {
+  display: table;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+  border: 1px solid rgba(0, 0, 0, .2);
+  border-radius: 5px;
+  min-width: 300px;
+  width: 100%;
+  height: fit-content;
+  margin: auto;
+  border-image-source: initial;
+  border-image-slice: initial;
+  border-image-width: initial;
+  border-image-outset: initial;
+  border-image-repeat: initial;
+  background: #fff;
+  >ux-dialog-header,
+  >ux-dialog-body,
+  >ux-dialog-footer {
+    display: block;
+    padding: 16px;
+  }
+  >ux-dialog-header {
+    display: flex !important;
+    justify-content: space-between !important;
+    border-bottom: 1px solid #e5e5e5;
+    .dialog-header-content {
+      order: -1;
+    }
+    >button {
+      border: none;
+      display: block;
+      width: 32px;
+      height: 32px;
+      background: 0 0;
+      font-size: 22px;
+      line-height: 16px;
+      margin-right: -10px;
+      margin-top: -8px;
+      padding: 0;
+      cursor: pointer;
+    }
+  }
+  >ux-dialog-footer {
+    border-top: 1px solid #e5e5e5;
+    text-align: right;
+    button {
+      margin-left: 16px;
+    }
+    // >button:first-child {
+    //   margin-left: 0px;
+    // }
+  }
+  &.ux-dialog-small {
+    max-width: 400px;
+  }
+  &.ux-dialog-medium {
+    max-width: 800px;
+  }
+  &.ux-dialog-large {
+    max-width: 1000px;
+  }
+}
+
+.ux-dialog-open {
+  overflow: hidden;
+}

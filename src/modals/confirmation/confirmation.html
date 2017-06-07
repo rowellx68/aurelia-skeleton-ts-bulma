@@ -1,0 +1,14 @@
+<template>
+  <ux-dialog class.bind="dialogClass">
+    <ux-dialog-header>
+      <h4 class="modal-title">${title}</h4>
+    </ux-dialog-header>
+    <ux-dialog-body>
+      <p>Are you sure you would like to logout?</p>
+    </ux-dialog-body>
+    <ux-dialog-footer>
+      <button class="btn btn-default" click.delegate="controller.cancel()">Close</button>
+      <button class="btn btn-success" click.delegate="controller.ok()">${okText}</button>
+    </ux-dialog-footer>
+  </ux-dialog>
+</template>

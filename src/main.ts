@@ -14,7 +14,13 @@ declare let ENV: AppConfig;
 export async function configure(aurelia: Aurelia) {
   aurelia.use
     .standardConfiguration()
-    .plugin(PLATFORM.moduleName("components"));
+    .plugin(PLATFORM.moduleName("components"))
+    .plugin(PLATFORM.moduleName("modals"))
+    .plugin(PLATFORM.moduleName("aurelia-dialog"), config => {
+      config.useDefaults();
+      config.useCSS(undefined);
+      config.settings.lock = false;
+    });
 
   if (ENV.logging) {
     aurelia.use.developmentLogging();

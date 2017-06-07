@@ -19,4 +19,8 @@ export class AppRouter {
 
     this.router = router;
   }
+
+  public navigateToLogin() {
+    this.router.navigateToRoute("login");
+  }
 }

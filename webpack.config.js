@@ -34,7 +34,8 @@ module.exports = ({ production, server, extractCss } = {}) => ({
     extensions: [".ts", ".js"],
     modules: [srcDir, "node_modules"],
     alias: {
-      "components": path.resolve("src/components")
+      "components": path.resolve("src/components"),
+      "modals": path.resolve("src/modals")
     }
   },
   entry: {

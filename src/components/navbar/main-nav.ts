@@ -1,7 +1,15 @@
-import { bindable, computedFrom } from "aurelia-framework";
+import { DialogOpenResult, DialogService } from "aurelia-dialog";
+import { bindable, computedFrom, inject } from "aurelia-framework";
 import { Router } from "aurelia-router";
 
+import { ConfirmationModal } from "../../modals/confirmation/confirmation";
+import { AppRouter } from "../../routers/app-router";
+
+@inject(AppRouter, DialogService)
 export class MainNavCustomElement {
+  constructor(private appRouter: AppRouter, private dialogService: DialogService) {
+  }
+
   @bindable router: Router;
 
   @computedFrom("router.currentInstruction")
@@ -12,5 +20,15 @@ export class MainNavCustomElement {
 
     const current = this.router.currentInstruction;
     return current.fragment !== "/login";
+  }
+
+  public async logout() {
+    const result = await this.dialogService.open({
+      viewModel: ConfirmationModal
+    }).then((dialogResult: DialogOpenResult) => dialogResult.closeResult);
+
+    if (!result.wasCancelled) {
+      this.appRouter.navigateToLogin();
+    }
   }
 }
