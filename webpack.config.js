@@ -94,7 +94,9 @@ module.exports = ({ production, server, extractCss } = {}) => ({
     new DefinePlugin({
       ENV: production ? JSON.stringify(appConfig.prduction) : JSON.stringify(appConfig.development)
     }),
-    new TsConfigPathsPlugin(),
+    new TsConfigPathsPlugin({
+      silent: true
+    }),
     new CheckerPlugin(),
     new HtmlWebpackPlugin({
       template: "index.ejs",
