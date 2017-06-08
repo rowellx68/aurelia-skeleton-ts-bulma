@@ -3595,6 +3595,10 @@ pngquant-bin@^3.0.0:
     bin-wrapper "^3.0.0"
     logalot "^2.0.0"
 
+popper.js@^1.9.9:
+  version "1.9.9"
+  resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.9.9.tgz#bcc8d2e4e40fa0ce26ce33ee0f9f8e7ad8c75809"
+
 portfinder@^1.0.9:
   version "1.0.13"
   resolved "https://registry.yarnpkg.com/portfinder/-/portfinder-1.0.13.tgz#bb32ecd87c27104ae6ee44b5a3ccbf0ebb1aede9"
@@ -4704,6 +4708,12 @@ timers-browserify@^2.0.2:
   resolved "https://registry.yarnpkg.com/timers-browserify/-/timers-browserify-2.0.2.tgz#ab4883cf597dcd50af211349a00fbca56ac86b86"
   dependencies:
     setimmediate "^1.0.4"
+
+tippy.js@^0.16.3:
+  version "0.16.3"
+  resolved "https://registry.yarnpkg.com/tippy.js/-/tippy.js-0.16.3.tgz#aa653d46d975939589cfde08a0a7e9812b1715fa"
+  dependencies:
+    popper.js "^1.9.9"
 
 to-absolute-glob@^0.1.1:
   version "0.1.1"

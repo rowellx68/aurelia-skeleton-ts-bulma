@@ -14,6 +14,7 @@ declare let ENV: AppConfig;
 export async function configure(aurelia: Aurelia) {
   aurelia.use
     .standardConfiguration()
+    .plugin(PLATFORM.moduleName("attributes"))
     .plugin(PLATFORM.moduleName("components"))
     .plugin(PLATFORM.moduleName("modals"))
     .plugin(PLATFORM.moduleName("aurelia-dialog"), config => {
