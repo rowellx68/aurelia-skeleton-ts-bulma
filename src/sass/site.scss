@@ -1,3 +1,4 @@
+@import "./variables";
 @import "../../node_modules/tippy.js/dist/tippy.css";
 @import "./ux-dialog.scss";
 
@@ -7,7 +8,18 @@
 }
 
 login-panel {
+  .login-app-logo {
+    color: $brand-info;
+    font-size: 5em;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
   .form-group:last-child {
     margin-bottom: 0;
   }
+}
+
+.jumbotron-main {
+  margin-top: ($line-height-computed * -1);
 }

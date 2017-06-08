@@ -1,0 +1,22 @@
+$brand-primary: #8e44ad;
+
+$navbar-border-radius: 0;
+
+$navbar-default-color: $brand-primary;
+$navbar-default-bg: $brand-primary;
+$navbar-default-border: darken($navbar-default-bg, 6.5%);
+
+$navbar-default-link-color: #fff;
+$navbar-default-link-hover-color: darken($navbar-default-link-color, 10%);
+$navbar-default-link-hover-bg: darken($navbar-default-bg, 3%);
+$navbar-default-link-active-color: #fff;
+$navbar-default-link-active-bg: darken($navbar-default-bg, 6.5%);
+
+$navbar-default-brand-color: #fff;
+$navbar-default-brand-hover-color: darken($navbar-default-brand-color, 10%);
+
+$navbar-default-toggle-hover-bg: darken($navbar-default-bg, 3%);
+$navbar-default-toggle-icon-bar-bg: $navbar-default-link-active-bg;
+$navbar-default-toggle-border-color: $navbar-default-link-active-bg;
+
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
