@@ -18,8 +18,9 @@
   },
   "homepage": "https://github.com/rowellx68/aurelia-ts-webpack-skeleton#readme",
   "scripts": {
-    "start": "webpack-dev-server -d --devtool \"#source-map\" --inline --env.server",
-    "build": "rimraf ./dist && webpack --progress -p --env.production --env.extractCss"
+    "start": "npm run clean-au-val && webpack-dev-server -d --devtool \"#source-map\" --inline --env.server",
+    "build": "npm run clean-au-val && rimraf ./dist && webpack --progress -p --env.production --env.extractCss",
+    "clean-au-val": "rimraf ./node_modules/aurelia-validation/node_modules"
   },
   "devDependencies": {
     "aurelia-loader-nodejs": "^1.0.1",
@@ -55,6 +56,7 @@
     "aurelia-polyfills": "^1.2.1",
     "aurelia-router": "^1.3.0",
     "aurelia-templating": "^1.4.2",
+    "aurelia-validation": "^1.0.0",
     "bluebird": "^3.5.0",
     "tippy.js": "^0.16.3"
   }

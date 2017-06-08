@@ -20,6 +20,10 @@ export class AppRouter {
     this.router = router;
   }
 
+  public navigateToDashboard() {
+    this.router.navigateToRoute("dashboard");
+  }
+
   public navigateToLogin() {
     this.router.navigateToRoute("login");
   }

@@ -77,7 +77,7 @@ module.exports = ({ production, server, extractCss } = {}) => ({
       },
       { test: /\.html$/i, loader: "html-loader" },
       { test: /\.ts$/i, loader: "awesome-typescript-loader", exclude: nodeModulesDir },
-      { test: require.resolve("bluebird"), loader: "expose-loader", options: "Promise" },
+      { test: require.resolve("bluebird"), loader: "expose-loader?Promise" },
       { test: /\.(jpe?g|png|gif|svg)$/i, loaders: ["file-loader?hash=sha512&digest=hex&name=[hash].[ext]", "image-webpack-loader"] },
       { test: /\.woff2(\?v=[0-9]\.[0-9]\.[0-9])?$/i, loader: "url-loader", options: { limit: 10000, mimetype: "application/font-woff2" } },
       { test: /\.woff(\?v=[0-9]\.[0-9]\.[0-9])?$/i, loader: "url-loader", options: { limit: 10000, mimetype: "application/font-woff" } },

@@ -21,7 +21,8 @@ export async function configure(aurelia: Aurelia) {
       config.useDefaults();
       config.useCSS(undefined);
       config.settings.lock = false;
-    });
+    })
+    .plugin(PLATFORM.moduleName("aurelia-validation"));
 
   if (ENV.logging) {
     aurelia.use.developmentLogging();

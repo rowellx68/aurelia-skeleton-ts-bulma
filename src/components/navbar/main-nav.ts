@@ -14,6 +14,7 @@ export class MainNavCustomElement {
 
   @computedFrom("router.currentInstruction")
   public get authenticated() {
+    // ideally you could get this from your service
     if (!this.router || !this.router.currentInstruction) {
       return false;
     }
