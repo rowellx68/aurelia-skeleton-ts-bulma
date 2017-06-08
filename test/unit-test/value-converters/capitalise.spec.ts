@@ -25,6 +25,19 @@ describe("CapitaliseValueConverter", () => {
   });
 
   describe("fromView", () => {
-    
+    it("returns capitalised single word", () => {
+      expect(sut.fromView("word")).toEqual("Word");
+      expect(sut.fromView("wOrd")).toEqual("WOrd");
+    });
+
+    it("returns capitalised multiple words", () => {
+      expect(sut.fromView("words words")).toEqual("Words Words");
+    });
+
+    it("returns null / undefined / empty string", () => {
+      expect(sut.fromView(null)).toEqual(null);
+      expect(sut.fromView(undefined)).toEqual(undefined);
+      expect(sut.fromView("")).toEqual("");
+    });
   });
 });

@@ -38,3 +38,6 @@ npm run build # or yarn build
 6. Bundling
 7. Configuration management
 8. Production/Development build
+
+## Notes
+This starter project's `webpack.config.js`, `karma-bundle.js` and `karma-conf.js` has been derrived from the official Aurelia skeleton project.

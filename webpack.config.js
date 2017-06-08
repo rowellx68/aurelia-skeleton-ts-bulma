@@ -29,7 +29,7 @@ const sassRules = [
   { loader: "sass-loader" }
 ];
 
-module.exports = ({ production, server, extractCss } = {}) => ({
+module.exports = ({ production, server, extractCss, coverage } = {}) => ({
   resolve: {
     extensions: [".ts", ".js"],
     modules: [srcDir, "node_modules"],
@@ -82,7 +82,12 @@ module.exports = ({ production, server, extractCss } = {}) => ({
       { test: /\.(jpe?g|png|gif|svg)$/i, loaders: ["file-loader?hash=sha512&digest=hex&name=[hash].[ext]", "image-webpack-loader"] },
       { test: /\.woff2(\?v=[0-9]\.[0-9]\.[0-9])?$/i, loader: "url-loader", options: { limit: 10000, mimetype: "application/font-woff2" } },
       { test: /\.woff(\?v=[0-9]\.[0-9]\.[0-9])?$/i, loader: "url-loader", options: { limit: 10000, mimetype: "application/font-woff" } },
-      { test: /\.(ttf|eot|svg|otf)(\?v=[0-9]\.[0-9]\.[0-9])?$/i, loader: "url-loader", options: { limit: 10000 } }
+      { test: /\.(ttf|eot|svg|otf)(\?v=[0-9]\.[0-9]\.[0-9])?$/i, loader: "url-loader", options: { limit: 10000 } },
+      ...when(coverage, {
+        test: /\.[jt]s$/i, loader: "istanbul-instrumenter-loader",
+        include: srcDir, exclude: [/\.{spec,test}\.[jt]s$/i],
+        enforce: "post", options: { esModules: true }
+      })
     ]
   },
   plugins: [
