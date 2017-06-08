@@ -24,7 +24,11 @@ export class MainNavCustomElement {
 
   public async logout() {
     const result = await this.dialogService.open({
-      viewModel: ConfirmationModal
+      viewModel: ConfirmationModal,
+      model: {
+        message: "Are you sure you would like to log out?",
+        okText: "Yes, logout"
+      }
     }).then((dialogResult: DialogOpenResult) => dialogResult.closeResult);
 
     if (!result.wasCancelled) {

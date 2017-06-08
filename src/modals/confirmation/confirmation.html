@@ -4,10 +4,12 @@
       <h4 class="modal-title">${title}</h4>
     </ux-dialog-header>
     <ux-dialog-body>
-      <p>Are you sure you would like to logout?</p>
+      <div class="content">
+        <p>${message}</p>
+      </div>
     </ux-dialog-body>
     <ux-dialog-footer>
-      <button class="btn btn-default" click.delegate="controller.cancel()">Close</button>
+      <button class="btn btn-default" click.delegate="controller.cancel()">${cancelText}</button>
       <button class="btn btn-success" click.delegate="controller.ok()">${okText}</button>
     </ux-dialog-footer>
   </ux-dialog>

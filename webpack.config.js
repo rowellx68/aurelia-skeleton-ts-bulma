@@ -103,6 +103,9 @@ module.exports = ({ production, server, extractCss } = {}) => ({
         title, server, baseUrl
       }
     }),
+    new CopyWebpackPlugin([
+      { from: "static/favicon.png", to: "favicon.png" }
+    ]),
     ...when(extractCss, new ExtractTextPlugin({ filename: "[contenthash].css", allChunks: true }))
   ]
 });

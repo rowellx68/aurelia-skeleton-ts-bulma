@@ -95,15 +95,16 @@ ux-dialog {
     //   margin-left: 0px;
     // }
   }
-  &.ux-dialog-small {
-    max-width: 400px;
-  }
-  &.ux-dialog-medium {
-    max-width: 800px;
-  }
-  &.ux-dialog-large {
-    max-width: 1000px;
-  }
+}
+
+.ux-dialog-small {
+  max-width: 400px;
+}
+.ux-dialog-medium {
+  max-width: 800px;
+}
+.ux-dialog-large {
+  max-width: 1000px;
 }
 
 .ux-dialog-open {
