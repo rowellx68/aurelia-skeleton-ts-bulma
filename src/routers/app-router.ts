@@ -21,6 +21,10 @@ export class AppRouter {
     this.router = router;
   }
 
+  public navigateToWelcome() {
+    this.router.navigateToRoute("welcome");
+  }
+
   public navigateToDashboard() {
     this.router.navigateToRoute("dashboard");
   }
