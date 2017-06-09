@@ -1,20 +1,36 @@
-import { inject } from "aurelia-framework";
-import Tippy from "tippy.js";
+import { bindable, inject } from "aurelia-framework";
 
 @inject(Element)
 export class TooltipCustomAttribute {
   constructor(private element: Element) {
   }
 
-  private options: tippy.TippyOptions = { arrow: true, size: "big" };
+  @bindable options: tippy.TippyOptions;
   
   private tip: tippy.TippyInstance;
 
   bind() {
-    this.tip = Tippy(this.element, this.options);
+    let options: tippy.TippyOptions = { arrow: true, size: "big" };
+
+    if (this.options) {
+      options = this.options;
+    }
+
+    this.tip = Tippy(this.element, options);
   }
 
   unbind() {
+    this.destroyTippyInstance();
+  }
+
+  optionsChanged() {
+    this.destroyTippyInstance();
+
+    this.element.setAttribute("title", this.element.getAttribute("data-original-title"));
+    this.tip = Tippy(this.element, this.options);
+  }
+
+  private destroyTippyInstance() {
     if (this.tip) {
       const popper = this.tip.getPopperElement(this.element);
       this.tip.destroy(popper);
