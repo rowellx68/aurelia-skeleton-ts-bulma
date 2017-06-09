@@ -2,7 +2,7 @@
     <nav class="navbar navbar-default navbar-main">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a href="#/dashboard" class="navbar-brand" tooltip title="Tooltip example"><i class="fa fa-fw fa-paper-plane"></i></a>
+                <a href="#" class="navbar-brand" tooltip title="Tooltip example"><i class="fa fa-fw fa-paper-plane"></i></a>
             </div>
             <ul if.bind="authenticated" class="nav navbar-nav navbar-right">
                 <li repeat.for="row of router.navigation" class="${row.isActive ? 'active' : ''}">

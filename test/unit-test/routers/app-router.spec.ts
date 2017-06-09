@@ -17,7 +17,7 @@ class RouterStub {
 
   navigateToRoute(route: string) {
     this.currentInstruction = {
-      config: this.routes.find(i => i.route === route);
+      config: this.routes.find(i => i.route === route)
     };
   }
 }
@@ -37,15 +37,19 @@ describe("AppRouter", () => {
   });
 
   it("should have redirect to dashboard route", () => {
-    expect(sut.router.routes).toContainEqual({ route: "", redirect: "dashboard" });
+    expect(sut.router.routes).toContainEqual({ route: "", redirect: "welcome" });
+  });
+
+  it("should have a welcome route", () => {
+    expect(sut.router.routes).toContainEqual({ route: "welcome", name: "welcome", moduleId: "pages/welcome/layout", nav: true, title: "Welcome" });
   });
 
   it("should have a dashboard route", () => {
-    expect(sut.router.routes).toContainEqual({ route: "dashboard", name: "dashboard", moduleId: PLATFORM.moduleName("pages/dashboard/layout"), nav: true, title: "Dashboard" });
+    expect(sut.router.routes).toContainEqual({ route: "dashboard", name: "dashboard", moduleId: "pages/dashboard/layout", nav: true, title: "Dashboard" });
   });
 
   it("should have a login route", () => {
-    expect(sut.router.routes).toContainEqual({ route: "login", name: "login", moduleId: PLATFORM.moduleName("pages/login/layout"), title: "Login" });
+    expect(sut.router.routes).toContainEqual({ route: "login", name: "login", moduleId: "pages/login/layout", title: "Login" });
   });
 
   it("should navigate using navigateToDashboard method", () => {
