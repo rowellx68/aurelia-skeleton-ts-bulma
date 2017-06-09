@@ -1,3 +1,4 @@
+import { Container } from "aurelia-dependency-injection";
 import { PLATFORM } from "aurelia-pal";
 import { Router } from "aurelia-router";
 
@@ -24,11 +25,13 @@ class RouterStub {
 
 describe("AppRouter", () => {
   let sut: AppRouter;
+  let container: Container;
   let mockedRouter;
 
   beforeEach(() => {
     mockedRouter = new RouterStub();
-    sut = new AppRouter();
+    container = new Container();
+    sut = container.get(AppRouter);
     sut.configure(mockedRouter, mockedRouter);
   });
 
@@ -50,6 +53,11 @@ describe("AppRouter", () => {
 
   it("should have a login route", () => {
     expect(sut.router.routes).toContainEqual({ route: "login", name: "login", moduleId: "pages/login/layout", title: "Login" });
+  });
+
+  it("should navigate using navigateToWelcome method", () => {
+    sut.navigateToWelcome();
+    expect(sut.router.currentInstruction.config.route).toEqual("welcome");
   });
 
   it("should navigate using navigateToDashboard method", () => {
