@@ -44,9 +44,18 @@ declare namespace tippy {
     destroy(popper: Element | HTMLElement);
 
     getPopperElement(refElement: Element | HTMLElement): Element | HTMLElement;
+    getTooltippedElement(popperElement: Element | HTMLElement): Element | HTMLElement;
+    getReference(element: Element | HTMLElement): tippy.TippyReference;
   }
-}
 
-declare module "tippy.js" {
-  export default Tippy;
+  interface TippyReference extends Object {
+    el: Element | HTMLElement;
+    id: number;
+    listeners: EventListener[];
+    onShownFired: boolean;
+    popper: Element | HTMLElement;
+    settings: tippy.TippyOptions;
+    tippyInstance: tippy.TippyInstance;
+    transitionedTimeout: number;
+  }
 }
