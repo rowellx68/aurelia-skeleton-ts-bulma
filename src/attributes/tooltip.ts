@@ -23,6 +23,7 @@ export class TooltipCustomAttribute {
     this.destroyTippyInstance();
   }
 
+  /* istanbul ignore next */
   optionsChanged() {
     this.destroyTippyInstance();
 

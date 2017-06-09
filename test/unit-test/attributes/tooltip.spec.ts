@@ -7,8 +7,7 @@ describe("TooltipCustomAttribute", () => {
 
   beforeEach(() => {
     component = StageComponent
-      .withResources(PLATFORM.moduleName("attributes/tooltip"
-      ))
+      .withResources(PLATFORM.moduleName("attributes/tooltip"))
       .inView("<button tooltip='options.bind: myOptions' title='My button'>Button</button>")
       .boundTo({ myOptions: { arrow: true, theme: "light" } });
   });
@@ -19,6 +18,18 @@ describe("TooltipCustomAttribute", () => {
       .then(() => {
         const tooltip = component.element.attributes.getNamedItem("tooltip");
         expect(tooltip).toBeDefined();
+        done();
+      })
+      .catch(e => console.log(e.toString()));
+  });
+
+  it("should retain title when options change", (done) => {
+    component
+      .create(bootstrap)
+      .then(() => {
+        const oldTitle = component.element.getAttribute("data-original-title");
+        component.boundTo({ myOptions: { arrow: true, theme: "dark" } });
+        expect(component.element.getAttribute("data-original-title")).toEqual(oldTitle);
         done();
       })
       .catch(e => console.log(e.toString()));
