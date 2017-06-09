@@ -18,10 +18,10 @@
   },
   "homepage": "https://github.com/rowellx68/aurelia-ts-webpack-skeleton#readme",
   "scripts": {
-    "start": "npm run clean-au-val && webpack-dev-server -d --devtool \"#source-map\" --inline --env.server",
-    "build": "npm run clean-au-val && rimraf ./dist && webpack --progress -p --env.production --env.extractCss",
+    "start": "npm run clr-au-val && webpack-dev-server -d --devtool \"#source-map\" --inline --env.server",
+    "build": "npm run clr-au-val && rimraf ./dist && webpack --progress -p --env.production --env.extractCss",
     "test": "rimraf ./test/coverage-karma && karma start ./test/karma.conf.js",
-    "clean-au-val": "rimraf ./node_modules/aurelia-validation/node_modules"
+    "clr-au-val": "rimraf ./node_modules/aurelia-validation/node_modules"
   },
   "devDependencies": {
     "@types/jest": "^19.2.4",
