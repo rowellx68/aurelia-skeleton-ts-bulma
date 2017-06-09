@@ -14,7 +14,7 @@ declare namespace tippy {
     animateFill?: boolean;
     duration?: number;
     hideDuration?: number;
-    html?: false | string;
+    html?: false | string | Element | HTMLElement;
     size?: "small" | "regular" | "big";
     distance?: number;
     theme?: "dark" | "light" | "transparent";
@@ -29,6 +29,12 @@ declare namespace tippy {
     appendTo?: Element | HTMLElement;
     zIndex?: number;
     popperOptions?: Object;
+
+    beforeShown?: Function;
+    shown?: Function;
+    beforeHidden?: Function;
+    hidden?: Function;
+    wait?: (show: Function, event: Event) => void;
   }
 
   interface TippyInstance extends Object {

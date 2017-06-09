@@ -1,10 +1,12 @@
-import { inject } from "aurelia-framework";
+import { bindable, inject } from "aurelia-framework";
 import Tippy from "tippy.js";
 
 @inject(Element)
 export class TooltipCustomAttribute {
   constructor(private element: Element) {
   }
+
+  @bindable options: tippy.TippyOptions;
   
   private tip: tippy.TippyInstance;
 
@@ -17,5 +19,9 @@ export class TooltipCustomAttribute {
 
   detatched() {
     this.tip.destroy(this.tip);
+  }
+
+  optionsChanged() {
+    this.tip = Tippy(this.element, this.options);
   }
 }
