@@ -38,10 +38,12 @@ declare namespace tippy {
   }
 
   interface TippyInstance extends Object {
-    show(instance: tippy.TippyInstance);
-    hide(instance: tippy.TippyInstance);
-    update(instance: tippy.TippyInstance);
-    destroy(instance: tippy.TippyInstance);
+    show(popper: Element | HTMLElement);
+    hide(popper: Element | HTMLElement);
+    update(popper: Element | HTMLElement);
+    destroy(popper: Element | HTMLElement);
+
+    getPopperElement(refElement: Element | HTMLElement): Element | HTMLElement;
   }
 }
 
