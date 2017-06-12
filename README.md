@@ -35,6 +35,6 @@ npm run build # or yarn build
 3. [Routing](docs/routing.md)
 4. Authentication
 5. [Templates](docs/templates.md)
-6. Bundling
-7. Configuration management
+6. [Bundling](docs/bundling-configuration.md)
+7. [Configuration management](docs/bundling-configuration.md)
 8. Production/Development build

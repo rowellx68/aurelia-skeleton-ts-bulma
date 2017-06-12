@@ -16,7 +16,6 @@ export async function configure(aurelia: Aurelia) {
     .standardConfiguration()
     .plugin(PLATFORM.moduleName("attributes"))
     .plugin(PLATFORM.moduleName("components"))
-    .plugin(PLATFORM.moduleName("modals"))
     .plugin(PLATFORM.moduleName("aurelia-dialog"), config => {
       config.useDefaults();
       config.useCSS(undefined);

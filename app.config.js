@@ -1,5 +1,5 @@
 module.exports = {
-    prduction: {
+    production: {
         logging: false
     },
     development: {

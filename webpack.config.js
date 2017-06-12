@@ -35,13 +35,12 @@ module.exports = ({ production, server, extractCss } = {}) => ({
     modules: [srcDir, "node_modules"],
     alias: {
       "attributes": path.resolve("src/attributes"),
-      "components": path.resolve("src/components"),
-      "modals": path.resolve("src/modals")
+      "components": path.resolve("src/components")
     }
   },
   entry: {
     app: ["aurelia-bootstrapper"],
-    vendor: ["bluebird"]
+    vendor: ["bluebird", "tippy.js"]
   },
   output: {
     path: outDir,
@@ -92,7 +91,7 @@ module.exports = ({ production, server, extractCss } = {}) => ({
       "Tippy": "tippy.js"
     }),
     new DefinePlugin({
-      ENV: production ? JSON.stringify(appConfig.prduction) : JSON.stringify(appConfig.development)
+      ENV: production ? JSON.stringify(appConfig.production) : JSON.stringify(appConfig.development)
     }),
     new TsConfigPathsPlugin(),
     new CheckerPlugin(),
