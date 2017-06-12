@@ -37,7 +37,7 @@ npm run build # or yarn build
 5. [Templates](docs/templates.md)
 6. [Bundling](docs/bundling-configuration.md)
 7. [Configuration management](docs/bundling-configuration.md)
-8. Production/Development build
+8. [Production/Development build](docs/bundling-configuration.md)
 9. [Unit Testing](docs/unit-testing.md)
 
 ## Notes
