@@ -27,7 +27,7 @@ export class LoginPanelCustomElement {
     this.validationController.validate()
       .then((result) => {
         if (result.valid) {
-          this.appRouter.navigateToDashboard();
+          this.appRouter.navigateToWelcome();
         }
       });
   }

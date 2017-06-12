@@ -1,0 +1,45 @@
+@import "./variables";
+@import "../../node_modules/tippy.js/src/scss/tippy.scss";
+
+@mixin theme-style($position, $colour) {
+  background-color: $colour;
+  [x-circle] {
+    background-color: $colour;
+  }
+  [x-arrow] {
+    @include arrow($position, 7px, $colour);
+
+    &.arrow-small {
+        @include arrow($position, 5px, $colour);
+    }
+
+    &.arrow-big {
+        @include arrow($position, 9px, $colour);
+    }
+  }
+}
+
+@each $position in $positions {
+  &[x-placement^=#{$position}] {
+
+    .tippy-tooltip.danger-theme {
+      @include theme-style($position, $brand-danger);
+    }
+
+    .tippy-tooltip.info-theme {
+      @include theme-style($position, $brand-info);
+    }
+
+    .tippy-tooltip.primary-theme {
+      @include theme-style($position, $brand-primary);
+    }
+
+    .tippy-tooltip.success-theme {
+      @include theme-style($position, $brand-success);
+    }
+
+    .tippy-tooltip.warning-theme {
+      @include theme-style($position, $brand-warning);
+    }
+  }
+}

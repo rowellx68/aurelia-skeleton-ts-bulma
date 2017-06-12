@@ -17,7 +17,7 @@ declare namespace tippy {
     html?: false | string | Element | HTMLElement;
     size?: "small" | "regular" | "big";
     distance?: number;
-    theme?: "dark" | "light" | "transparent";
+    theme?: string;
     offset?: number;
     hideOnClick?: boolean | "persistent";
     multiple?: boolean;
