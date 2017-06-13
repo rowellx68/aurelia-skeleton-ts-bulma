@@ -35,6 +35,12 @@ module.exports = {
         "nps clean.build",
         "webpack-dev-server -d --devtool \"#source-map\" --inline --env.server"
       )
+    },
+    unitTest: {
+      default: series(
+        "nps clean.test",
+        "karma start test/karma.conf.js"
+      )
     }
   }
 };

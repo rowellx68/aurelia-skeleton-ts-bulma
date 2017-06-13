@@ -22,7 +22,8 @@
     "build": "nps webpack.build.production",
     "build-dev": "nps webpack.build.development",
     "cleanup": "npm clean",
-    "lint": "nps lint"
+    "lint": "nps lint",
+    "test": "nps unitTest"
   },
   "devDependencies": {
     "@types/jest": "^19.2.4",
