@@ -1,8 +1,9 @@
-@import "./variables";
 @import "../../node_modules/tippy.js/src/scss/tippy.scss";
 
 @mixin theme-style($position, $colour) {
   background-color: $colour;
+  box-shadow: 0 4px 20px 4px rgba(0, 20, 60, 0.1), 0 4px 80px -8px rgba(0, 20, 60, 0.2);
+
   [x-circle] {
     background-color: $colour;
   }
@@ -23,23 +24,24 @@
   &[x-placement^=#{$position}] {
 
     .tippy-tooltip.danger-theme {
-      @include theme-style($position, $brand-danger);
+      @include theme-style($position, $danger);
     }
 
     .tippy-tooltip.info-theme {
-      @include theme-style($position, $brand-info);
+      @include theme-style($position, $info);
     }
 
     .tippy-tooltip.primary-theme {
-      @include theme-style($position, $brand-primary);
+      @include theme-style($position, $primary);
     }
 
     .tippy-tooltip.success-theme {
-      @include theme-style($position, $brand-success);
+      @include theme-style($position, $success);
     }
 
     .tippy-tooltip.warning-theme {
-      @include theme-style($position, $brand-warning);
+      color: $text;
+      @include theme-style($position, $warning);
     }
   }
 }

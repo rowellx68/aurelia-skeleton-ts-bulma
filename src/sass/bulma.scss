@@ -1,0 +1,21 @@
+@import "../../node_modules/bulma/bulma.sass";
+
+.has-padding {
+  &-top {
+    padding-top: 0.75rem;
+  }
+}
+
+@media screen and (max-width: $desktop) {
+  .container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .nav {
+    .container {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}

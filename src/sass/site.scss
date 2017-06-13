@@ -1,29 +1,4 @@
-@import "./variables";
+@import "./bulma.scss";
 @import "./tippy-theme.scss";
 @import "./ux-dialog.scss";
 
-body {
-  background-color: $background-colour;
-}
-
-.navbar-main {
-    border-left: none;
-    border-right: none;
-}
-
-login-panel {
-  .login-app-logo {
-    color: $brand-info;
-    font-size: 5em;
-    text-align: center;
-    margin-bottom: 10px;
-  }
-
-  .form-group:last-child {
-    margin-bottom: 0;
-  }
-}
-
-.jumbotron-main {
-  margin-top: ($line-height-computed * -1);
-}

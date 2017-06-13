@@ -10,7 +10,7 @@ export class TooltipCustomAttribute {
   private tip: tippy.TippyInstance;
 
   bind() {
-    let options: tippy.TippyOptions = { arrow: true, size: "big" };
+    let options: tippy.TippyOptions = { arrow: true, size: "regular" };
 
     if (this.options) {
       options = this.options;

@@ -1,12 +1,12 @@
 <template>
   <require from="./components/sidebar/main-sidebar"></require>
 
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-sm-3">
+  <div class="container has-padding-top">
+    <div class="columns">
+      <div class="column is-one-quarter">
         <main-sidebar router.bind="dashboardRouter.router"></main-sidebar>
       </div>
-      <div class="col-sm-9">
+      <div class="column">
         <router-view></router-view>
       </div>
     </div>

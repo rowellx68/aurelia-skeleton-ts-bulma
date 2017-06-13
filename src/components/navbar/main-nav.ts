@@ -5,9 +5,9 @@ import { Router } from "aurelia-router";
 import { ConfirmationModal } from "../../modals/confirmation/confirmation";
 import { AppRouter } from "../../routers/app-router";
 
-@inject(AppRouter, DialogService)
+@inject(Element, AppRouter, DialogService)
 export class MainNavCustomElement {
-  constructor(private appRouter: AppRouter, private dialogService: DialogService) {
+  constructor(private el: Element, private appRouter: AppRouter, private dialogService: DialogService) {
   }
 
   @bindable router: Router;
@@ -23,6 +23,27 @@ export class MainNavCustomElement {
     return current.fragment !== "/login";
   }
 
+  attached() {
+    const toggle = this.el.querySelector(".nav-toggle");
+    const navItems = Array.prototype.slice.call(this.el.querySelectorAll(".nav-item"));
+
+    toggle.addEventListener("click", (ev: Event) => this.toggleClick(event));
+
+    navItems.forEach(e => {
+      e.addEventListener("click", () => this.navItemClick());
+    });
+  }
+
+  detached() {
+    const toggle = this.el.querySelector(".nav-toggle");
+    const navItems = Array.prototype.slice.call(this.el.querySelectorAll(".nav-item"));
+
+    toggle.removeEventListener("click", (ev: Event) => this.toggleClick(event));
+    navItems.forEach(e => {
+      e.removeEventListener("click", () => this.navItemClick());
+    });
+  }
+
   public async logout() {
     const result = await this.dialogService.open({
       viewModel: ConfirmationModal,
@@ -35,5 +56,21 @@ export class MainNavCustomElement {
     if (!result.wasCancelled) {
       this.appRouter.navigateToLogin();
     }
+  }
+
+  private toggleClick(event: Event) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    const menu = this.el.querySelector(".nav-menu");
+
+    menu.classList.contains("is-active")
+        ? menu.classList.remove("is-active")
+        : menu.classList.add("is-active");
+  }
+
+  private navItemClick() {
+    const menu = this.el.querySelector(".nav-menu");
+    menu.classList.remove("is-active");
   }
 }
