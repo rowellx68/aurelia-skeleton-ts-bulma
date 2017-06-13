@@ -37,15 +37,16 @@ npm run build # or yarn build
 ## Documentation
 
 1. [Project structure](docs/project-structure.md)
-2. [Component naming & organisation](docs/component-naming-organisation.md)
+2. [Code style](docs/code-style.md)
+3. [Component naming & organisation](docs/component-naming-organisation.md)
     - [Component communication](docs/component-communication.md)
-3. [Routing](docs/routing.md)
-4. Authentication
-5. [Templates](docs/templates.md)
-6. [Bundling](docs/bundling-configuration.md)
-7. [Configuration management](docs/bundling-configuration.md)
-8. [Production/Development build](docs/bundling-configuration.md)
-9. [Unit Testing](docs/unit-testing.md)
+4. [Routing](docs/routing.md)
+5. Authentication
+6. [Templates](docs/templates.md)
+7. [Bundling](docs/bundling-configuration.md)
+8. [Configuration management](docs/bundling-configuration.md)
+9. [Production/Development build](docs/bundling-configuration.md)
+10. [Unit Testing](docs/unit-testing.md)
 
 ## Notes
 This starter project's `webpack.config.js`, `karma-bundle.js` and `karma-conf.js` has been derrived from the official Aurelia skeleton project.
