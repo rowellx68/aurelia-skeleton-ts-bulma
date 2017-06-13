@@ -1,3 +1,14 @@
 <template>
-  
+  <require from="./components/sidebar/main-sidebar"></require>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3">
+        <main-sidebar router.bind="dashboardRouter.router"></main-sidebar>
+      </div>
+      <div class="col-sm-9">
+        <router-view></router-view>
+      </div>
+    </div>
+  </div>
 </template>

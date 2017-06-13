@@ -2,6 +2,10 @@
 @import "./tippy-theme.scss";
 @import "./ux-dialog.scss";
 
+body {
+  background-color: $background-colour;
+}
+
 .navbar-main {
     border-left: none;
     border-right: none;

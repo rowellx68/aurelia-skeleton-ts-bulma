@@ -12,7 +12,7 @@ export class AppRouter {
 
     config.title = "Aurelia Webpack Starter";
     config.map([
-      { route: ["", "/", "#"], redirect: "welcome" },
+      { route: ["", "/"], redirect: "welcome" },
       { route: "welcome", name: "welcome", moduleId: PLATFORM.moduleName("pages/welcome/layout"), nav: true, title: "Welcome" },
       { route: "dashboard", name: "dashboard", moduleId: PLATFORM.moduleName("pages/dashboard/layout"), nav: true, title: "Dashboard" },
       { route: "login", name: "login", moduleId: PLATFORM.moduleName("pages/login/layout"), title: "Login" }
