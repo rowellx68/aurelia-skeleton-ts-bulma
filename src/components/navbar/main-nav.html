@@ -7,14 +7,15 @@
             </a>
           </div>
 
-          <span class="nav-toggle">
+          <span class="nav-toggle" show.bind="authenticated">
             <span></span>
             <span></span>
             <span></span>
           </span>
 
-          <div class="nav-right nav-menu">
+          <div class="nav-right nav-menu" show.bind="authenticated">
             <a href.bind="row.href" repeat.for="row of router.navigation" class="nav-item is-tab ${row.isActive ? 'is-active' : ''}">${row.title}</a>
+            <a href="#" click.trigger="logout()" class="nav-item is-tab">Logout</a>
           </div>
       </div>
     </nav>

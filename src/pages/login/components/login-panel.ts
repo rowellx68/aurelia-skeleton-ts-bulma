@@ -3,7 +3,7 @@ import { validateTrigger, ValidationController, ValidationControllerFactory, Val
 
 import { AppRouter } from "../../../routers/app-router";
 import { appEvents, EventManager } from "../../../utilities/event-manager";
-import { ValidationBootstrapFormRenderer } from "../../../utilities/validation-bootstrap-renderer";
+import { ValidationBulmaFormRenderer } from "../../../utilities/validation-bulma-renderer";
 
 @inject(AppRouter, EventManager, ValidationControllerFactory)
 export class LoginPanelCustomElement {
@@ -14,7 +14,7 @@ export class LoginPanelCustomElement {
       .on(this);
     
     this.validationController = this.validationFactory.createForCurrentScope();
-    this.validationController.addRenderer(new ValidationBootstrapFormRenderer());
+    this.validationController.addRenderer(new ValidationBulmaFormRenderer());
     this.validationController.validateTrigger = validateTrigger.change;
   }
 

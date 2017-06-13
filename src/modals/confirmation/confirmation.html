@@ -1,7 +1,8 @@
 <template>
-  <ux-dialog class.bind="dialogClass">
-    <ux-dialog-header>
-      <h4 class="modal-title">${title}</h4>
+  <ux-dialog>
+    <ux-dialog-header show-close-button.bind="false">
+      <p class="modal-card-title">${title}</p>
+      <button class="delete" click.delegate="controller.cancel()"></button>
     </ux-dialog-header>
     <ux-dialog-body>
       <div class="content">
@@ -9,8 +10,8 @@
       </div>
     </ux-dialog-body>
     <ux-dialog-footer>
-      <button class="btn btn-default" click.delegate="controller.cancel()">${cancelText}</button>
-      <button class="btn btn-success" click.delegate="controller.ok()">${okText}</button>
+      <button class="button" click.delegate="controller.cancel()">${cancelText}</button>
+      <button class="button is-success" click.delegate="controller.ok()">${okText}</button>
     </ux-dialog-footer>
   </ux-dialog>
 </template>

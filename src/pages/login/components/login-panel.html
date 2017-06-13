@@ -1,35 +1,31 @@
 <template>
-  <div class="panel panel-default">
-    <div class="panel-body">
-      <div class="login-app-logo">
-        <i class="fa fa-fw fa-paper-plane"></i>
+  <div class="card">
+    <div class="card-content">
+      <div class="field">
+        <div class="control has-icons-left">
+          <input type="text" class="input" value.two-way="username & validate" placeholder="username">
+          <span class="icon is-small is-right">
+            <i class="fa fa-fw fa-user-circle"></i>
+          </span>
+        </div>
       </div>
-      <form class="form">
-        <div class="form-group form-group-lg">
-          <div class="input-group">
-            <span class="input-group-addon">
-              <i class="fa fa-fw fa-user-circle"></i>
-            </span>
-            <input type="text" value.two-way="username & validate" placeholder="username" class="form-control">
-          </div>
+      <div class="field">
+        <div class="control has-icons-left">
+          <input type="password" class="input" value.two-way="password & validate" placeholder="password">
+          <span class="icon is-small is-right">
+            <i class="fa fa-fw fa-lock"></i>
+          </span>
         </div>
-        <div class="form-group form-group-lg">
-          <div class="input-group">
-            <span class="input-group-addon">
-              <i class="fa fa-fw fa-lock"></i>
-            </span>
-            <input type="password" value.two-way="password & validate" placeholder="password" class="form-control">
-          </div>
-        </div>
-        <div class="form-group form-group-lg">
-          <button class="btn btn-primary btn-block btn-lg" click.delegate="login()">Login</button>
-        </div>
-        <div class="form-group form-group-lg">
-          <button class="btn btn-google btn-block btn-lg" click.delegate="authenticate()">
-            <i class="fa fa-fw fa-google"></i> Login with Google
-          </button>
-        </div>
-      </form>
+      </div>
+      <div class="field">
+        <button class="button is-primary is-full-width" click.delegate="login()">Login</button>
+      </div>
+      <div class="field">
+        <button class="button is-info is-full-width" click.delegate="authenticate()">
+          <i class="fa fa-fw fa-google"></i>
+          Login with Google
+        </button>
+      </div>
     </div>
   </div>
 </template>

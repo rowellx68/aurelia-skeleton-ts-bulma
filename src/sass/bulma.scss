@@ -1,5 +1,9 @@
 @import "../../node_modules/bulma/bulma.sass";
 
+.is-full-width {
+  width: 100%;
+}
+
 .has-padding {
   &-top {
     padding-top: 0.75rem;

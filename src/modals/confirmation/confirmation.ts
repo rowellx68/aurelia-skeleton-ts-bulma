@@ -18,7 +18,6 @@ export class ConfirmationModal {
 
   activate(model) {
     this.applyOptionalProperties(model);
-    this.element.classList.add(this.dialogClass);
   }
 
   private applyOptionalProperties(model) {
