@@ -9,6 +9,11 @@ export class EventManager {
   public publish(event: string, data?: any) {
     this.aggregator.publish(event, data);
   }
+
+  public subscribe(event: string, callback: Function) {
+    const sub = this.aggregator.subscribe(event, callback);
+    return new AuSubscription(sub);
+  }
 }
 
 export class AuSubscription implements ISubscription {
