@@ -34,4 +34,9 @@ export class LoginPanelCustomElement {
         }
       });
   }
+
+  authenticate() {
+    this.appRouter.navigateToWelcome();
+    this.events.publish(appEvents.app.login);
+  }
 }

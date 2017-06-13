@@ -8,7 +8,6 @@ import "./sass/site.scss";
 
 Bluebird.config({ warnings: { wForgottenReturn: false } });
 
-
 declare let ENV: AppConfig;
 
 export async function configure(aurelia: Aurelia) {
