@@ -18,14 +18,7 @@ As can be seen from the example below, you will be able to inject `AppRouter` an
 
 ```typescript
 // app.ts
-import { inject } from "aurelia-framework";
-import { Router, RouterConfiguration } from "aurelia-router";
-import { AppRouter } from "./routers/app-router";
-
-@inject(AppRouter)
 export class App {
-  constructor(private appRouter: AppRouter) {
-  }
 
   configureRouter(config: RouterConfiguration, router: Router) {
     this.appRouter.configure(config, router);
@@ -35,13 +28,7 @@ export class App {
 
 ```typescript
 // app-router.ts
-import { inject } from "aurelia-framework";
-import { PLATFORM } from "aurelia-pal";
-import { Router, RouterConfiguration } from "aurelia-router";
-
 export class AppRouter {
-  constructor() {
-  }
 
   public router: Router;
 

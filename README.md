@@ -27,6 +27,13 @@ To build an optimised and minified production bundle, execute the following comm
 npm run build # or yarn build
 ```
 
+## Requirements
+1. Node >= 6
+2. npm / yarn
+3. TypeScript - `npm install -g typescript`
+4. TSLint - `npm install -g tslint`
+5. IDE of your choice, [VS Code](https://code.visualstudio.com/) highly suggested
+
 ## Documentation
 
 1. [Project structure](docs/project-structure.md)

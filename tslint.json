@@ -1,13 +1,33 @@
 {
   "rules": {
-    "no-debugger": true,
-    "quotemark": [
+    "align": [
       true,
-      "double"
+      "parameters",
+      "statements"
     ],
-    "variable-name": [
+    "class-name": true,
+    "member-ordering": [
       true,
-      "check-format"
+      {
+        "order": [
+          "constructor",
+          "public-instance-field",
+          "private-instance-field",
+          "public-instance-method",
+          "private-instance-method"
+        ]
+      }
+    ],
+    "no-consecutive-blank-lines": [
+      true,
+      2
+    ],
+    "no-debugger": true,
+    "no-var-keyword": true,
+    "no-var-requires": true,
+    "one-variable-per-declaration": [
+      true,
+      "ignore-for-loop"
     ],
     "ordered-imports": [
       true,
@@ -15,6 +35,11 @@
         "import-sources-order": "lowercase-last",
         "named-imports-order": "lowercase-first"
       }
+    ],
+    "prefer-template": true,
+    "quotemark": [
+      true,
+      "double"
     ],
     "semicolon": [
       true,
@@ -24,10 +49,9 @@
       true,
       "never"
     ],
-    "no-consecutive-blank-lines": [
+    "variable-name": [
       true,
-      2
-    ],
-    "align": [true, "parameters", "statements"]
+      "check-format"
+    ]
   }
 }
