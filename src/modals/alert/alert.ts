@@ -2,17 +2,15 @@ import { DialogController } from "aurelia-dialog";
 import { inject } from "aurelia-framework";
 
 @inject(DialogController, Element)
-export class ConfirmationModal {
+export class AlertModal {
   constructor(public controller: DialogController, private element: Element) {
   }
 
-  public title: string = "Confirmation";
+  public title: string = "Alert";
 
   public message: string = "";
 
-  public okText: string = "Yes";
-
-  public cancelText: string = "No";
+  public okText: string = "OK";
 
   activate(model) {
     this.applyOptionalProperties(model);
@@ -29,10 +27,6 @@ export class ConfirmationModal {
 
     if (model.okText) {
       this.okText = model.okText;
-    }
-
-    if (model.cancelText) {
-      this.cancelText = model.cancelText;
     }
   }
 }

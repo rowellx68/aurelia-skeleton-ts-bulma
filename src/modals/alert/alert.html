@@ -1,0 +1,16 @@
+<template>
+  <ux-dialog>
+    <ux-dialog-header show-close-button.bind="false">
+      <p class="modal-card-title">${title}</p>
+      <button class="delete" click.delegate="controller.cancel()"></button>
+    </ux-dialog-header>
+    <ux-dialog-body>
+      <div class="content">
+        <p>${message}</p>
+      </div>
+    </ux-dialog-body>
+    <ux-dialog-footer>
+      <button class="button is-success" click.delegate="controller.ok()">${okText}</button>
+    </ux-dialog-footer>
+  </ux-dialog>
+</template>

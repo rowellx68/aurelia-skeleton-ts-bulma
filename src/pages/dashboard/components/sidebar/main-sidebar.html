@@ -6,6 +6,9 @@
     <ul class="menu-list">
       <li repeat.for="row of router.navigation">
         <a href.bind="row.href" class="${row.isActive ? 'is-active' : ''}">
+          <!--<span class="icon is-small">
+            <i class="fa fa-fw ${row.settings.icon}"></i>
+          </span>-->
           ${row.title}
         </a>
       </li>

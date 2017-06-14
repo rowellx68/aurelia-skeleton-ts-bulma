@@ -4,7 +4,7 @@
       <div class="field">
         <div class="control has-icons-left">
           <input type="text" class="input" value.two-way="username & validate" placeholder="username">
-          <span class="icon is-small is-right">
+          <span class="icon is-small is-left">
             <i class="fa fa-fw fa-user-circle"></i>
           </span>
         </div>
@@ -12,19 +12,21 @@
       <div class="field">
         <div class="control has-icons-left">
           <input type="password" class="input" value.two-way="password & validate" placeholder="password">
-          <span class="icon is-small is-right">
+          <span class="icon is-small is-left">
             <i class="fa fa-fw fa-lock"></i>
           </span>
         </div>
       </div>
       <div class="field">
-        <button class="button is-primary is-full-width" click.delegate="login()">Login</button>
+        <a href="#" class="button is-primary is-full-width" click.delegate="login()">Login</a>
       </div>
       <div class="field">
-        <button class="button is-info is-full-width" click.delegate="authenticate()">
-          <i class="fa fa-fw fa-google"></i>
-          Login with Google
-        </button>
+        <a href="#" class="button is-info is-full-width" click.trigger="authenticate()">
+          <span class="icon">
+            <i class="fa fa-fw fa-google"></i>
+          </span>
+          <span>Login with Google</span>
+        </a>
       </div>
     </div>
   </div>

@@ -34,19 +34,5 @@ npm run build # or yarn build
 4. TSLint - `npm install -g tslint`
 5. IDE of your choice, [VS Code](https://code.visualstudio.com/) highly suggested
 
-## Documentation
-
-1. [Project structure](docs/project-structure.md)
-2. [Code style](docs/code-style.md)
-3. [Component naming & organisation](docs/component-naming-organisation.md)
-    - [Component communication](docs/component-communication.md)
-4. [Routing](docs/routing.md)
-5. Authentication
-6. [Templates](docs/templates.md)
-7. [Bundling](docs/bundling-configuration.md)
-8. [Configuration management](docs/bundling-configuration.md)
-9. [Production/Development build](docs/bundling-configuration.md)
-10. [Unit Testing](docs/unit-testing.md)
-
 ## Notes
 This starter project's `webpack.config.js`, `karma-bundle.js` and `karma-conf.js` has been derrived from the official Aurelia skeleton project.
