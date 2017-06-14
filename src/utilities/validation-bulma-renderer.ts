@@ -20,7 +20,13 @@ export class ValidationBulmaFormRenderer {
       return;
     }
 
-    element.classList.add("is-danger");
+    if (element.childElementCount) {
+      this.addClassToElement(element, ".input");
+      this.addClassToElement(element, ".button");
+    }
+    else {
+      element.classList.add("is-danger");
+    }
   }
 
   remove(element: Element, result: ValidateResult) {
@@ -28,6 +34,22 @@ export class ValidationBulmaFormRenderer {
       return;
     }
 
-    element.classList.remove("is-danger");
+    if (element.childElementCount) {
+      this.removeClassToElement(element, ".input");
+      this.removeClassToElement(element, ".button");
+    }
+    else {
+      element.classList.remove("is-danger");
+    }
+  }
+
+  private addClassToElement(element: Element, selector: string) {
+    const input = element.querySelector(selector);
+    input.classList.add("is-danger");
+  }
+
+  private removeClassToElement(element: Element, selector: string) {
+    const input = element.querySelector(selector);
+    input.classList.remove("is-danger");
   }
 }

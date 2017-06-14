@@ -1,0 +1,17 @@
+<template>
+  <div class="field has-addons has-flex-grow">
+    <p class="control ${hasIcon ? 'has-icons-left' : ''} has-flex-grow">
+      <input type="text" class="input" placeholder.bind="placeholder">
+      <span if.bind="hasIcon" class="icon is-small">
+        <i class="fa fa-fw fa-calendar"></i>
+      </span>
+    </p>
+    <p class="control">
+      <a href="#" class="button" click.trigger="clear()">
+        <span class="icon is-small">
+          <i class="fa fa-fw fa-times"></i>
+        </span>
+      </a>
+    </p>
+  </div>
+</template>

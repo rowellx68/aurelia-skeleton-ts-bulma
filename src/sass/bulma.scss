@@ -6,6 +6,10 @@ $primary: #9b59b6;
   width: 100%;
 }
 
+.has-flex-grow {
+  flex-grow: 1;
+}
+
 .has-padding {
   &-top {
     padding-top: 0.75rem;

@@ -26,6 +26,7 @@
     "test": "nps unitTest"
   },
   "devDependencies": {
+    "@types/flatpickr": "^2.2.1",
     "@types/jest": "^19.2.4",
     "@types/lodash": "^4.14.66",
     "@types/node": "^7.0.31",
@@ -81,6 +82,7 @@
     "aurelia-validation": "^1.0.0",
     "bluebird": "^3.5.0",
     "bulma": "^0.4.2",
+    "flatpickr": "^3.0.5-1",
     "tippy.js": "^0.17.0"
   }
 }

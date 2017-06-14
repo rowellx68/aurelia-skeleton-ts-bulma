@@ -37,6 +37,10 @@
   version "0.0.29"
   resolved "https://registry.yarnpkg.com/@types/debug/-/debug-0.0.29.tgz#a1e514adfbd92f03a224ba54d693111dbf1f3754"
 
+"@types/flatpickr@^2.2.1":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@types/flatpickr/-/flatpickr-2.2.1.tgz#252466cebefa39f35dc5beb93dbca75c367c04d9"
+
 "@types/fs-extra@0.0.33":
   version "0.0.33"
   resolved "https://registry.yarnpkg.com/@types/fs-extra/-/fs-extra-0.0.33.tgz#a8719c417b080c012d3497b28e228ac09745fdf2"
@@ -2472,6 +2476,10 @@ find-versions@^1.0.0:
 first-chunk-stream@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/first-chunk-stream/-/first-chunk-stream-1.0.0.tgz#59bfb50cd905f60d7c394cd3d9acaab4e6ad934e"
+
+flatpickr@^3.0.5-1:
+  version "3.0.5-1"
+  resolved "https://registry.yarnpkg.com/flatpickr/-/flatpickr-3.0.5-1.tgz#c642991b71f8a404ec45e47e03dbf72c48f8b622"
 
 flatten@^1.0.2:
   version "1.0.2"
